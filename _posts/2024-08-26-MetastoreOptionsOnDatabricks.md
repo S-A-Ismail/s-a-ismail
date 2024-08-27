@@ -26,7 +26,7 @@ Here are some key usages of a metastore in the big data ecosystem:
 ## Metastore Catalog options for Databricks on AWS ##
 Databricks offers various metastore options to help you effectively manage metadata. In this article, we will explore some of these options and discuss their benefits and use cases. In later articles, I will walk through setting up each of these catalogs.
 
-![img-description](CatalogOptions.png)
+![img-description](CatalogOptions.PNG)
 
 **AWS Glue Data Catalog:**
 
