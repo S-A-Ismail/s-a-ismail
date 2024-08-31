@@ -9,6 +9,7 @@ img_path: /assets/img/metastores-article/
 ---
 The AWS Glue Data Catalog seamlessly integrates with Databricks, providing a centralized and consistent view of your data.
 
+> This article was originally written by me back in early 2023, Databricks now offers Glue as an option in Lakehouse Federation and Unity Catalog which has further benefits. I will soon be writing on that as well.
 {: .prompt-info }
 
 ## Implementing Glue Data Catalog as a Metadata service ##
@@ -16,7 +17,7 @@ The AWS Glue Data Catalog seamlessly integrates with Databricks, providing a cen
 ![img-description](GlueLogicalArchitecture.PNG)
 _Reference: [AWS Glue as the Metastore for Databricks — public preview](https://www.databricks.com/blog/2019/06/20/announcing-databricks-runtime-5-4.html)_
 
-### Pre-requisites:###
+### Pre-requisites: ###
 
 - An AWS account with AWS Glue Data Catalog enabled.
 - An existing Databricks workspace.
