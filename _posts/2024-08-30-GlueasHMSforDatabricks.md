@@ -213,7 +213,7 @@ _Reference: [AWS Glue as the Metastore for Databricks — public preview](https:
     }
     ```
 - Ensure the IAM role has the necessary permissions to read/write metadata from the Glue Data Catalog. This includes underlying S3 bucket access too. If it’s an instance profile it should be able to access the S3 bucket the Glue metadata points to.
-- Import the Instance profile to Databricks Workspace if not already enrolled. Your Databricks workspace deployment role should be able to pass this new IAM role for enrollment to be successful. For more details: [Look up the IAM role used to create the Databricks deployment](http://look%20up%20the%20iam%20role%20used%20to%20create%20the%20databricks%20deployment/)
+- Import the Instance profile to Databricks Workspace if not already enrolled. Your Databricks workspace deployment role should be able to pass this new IAM role for enrollment to be successful. For more details: [Look up the IAM role used to create the Databricks deployment](https://docs.databricks.com/en/connect/storage/tutorial-s3-instance-profile.html#step-4-locate-the-iam-role-that-created-the-databricks-deployment)
 
 ## Step 3: Configure Cluster Policy Settings ##
 
