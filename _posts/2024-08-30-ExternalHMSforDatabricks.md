@@ -6,6 +6,7 @@ tags: [aws, databricks, metastores, catalogs, hive-metastore, glue, unity catalo
 author: ismail
 toc: true
 img_path: /assets/img/metastores-article/
+render_with_liquid: false
 ---
 Databricks has built-in support for the Hive Metastore (HMS), allowing for seamless integration and compatibility. It enables users to leverage existing Hive metadata and infrastructure within the Databricks environment. You have the option to bring your own existing metastore to Databricks.
 
@@ -44,7 +45,6 @@ Set the Spark Config settings on the Databricks cluster to point to the External
 > You may use cluster policies to standardize these settings
 {: .prompt-info }
 
-    
     spark.sql.hive.metastore.version <Compatible HMS Version>
     spark.hadoop.javax.jdo.option.ConnectionUserName <hive user>
     spark.hadoop.javax.jdo.option.ConnectionURL jdbc:postgresql://<hostname>:<host port>/databasename
@@ -52,7 +52,6 @@ Set the Spark Config settings on the Databricks cluster to point to the External
     spark.hadoop.javax.jdo.option.ConnectionDriverName org.postgresql.Driver
     spark.sql.hive.metastore.jars /databricks/hive_metastore_jars/*    
     
-
 > **_Note:_** _The connection Driver can be MySQL, MariaDB, or PostgreSQL, depending on your external store._ 
 {: .prompt-info }
 

@@ -53,224 +53,224 @@ I have created a simplified CFN template to run the same, this template can be u
 
 The CFN runs as a two-step process. Once you’ve added your Tags and S3 buckets, run the following CFN to create the stack.
 
-    ```json
-    {
-        "AWSTemplateFormatVersion": "2010-09-09",
-        "Description": "Provision cloud resources resources to create databricks unity catalog metastore",
-        "Parameters" : {
-        "RoleName" : {
-                "Type" : "String",
-                "Default" : "databricks-unity-catalog-sc-role",
-                "Description" : "Enter rolename for your sc role"
-            },
-        "BucketName": {
+```json
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Provision cloud resources resources to create databricks unity catalog metastore",
+    "Parameters" : {
+    "RoleName" : {
             "Type" : "String",
-                "Default" : "databricks-unity-catalog-root-storage-bucket",
-                "Description" : "Enter bucketname for your root bucket"
-            },
-        "DatabricksAccountID": {
-            "Type" : "String",
-                "Default" : "",
-                "Description" : "Enter your databricks Account ID"
-            }
+            "Default" : "databricks-unity-catalog-sc-role",
+            "Description" : "Enter rolename for your sc role"
         },
-        "Resources": {
-            "RootBucket": {
-            "Type": "AWS::S3::Bucket",
-            "Properties": {
-                "BucketName":{ "Ref" : "BucketName" },
-                "BucketEncryption": {
-                "ServerSideEncryptionConfiguration": [
-                    {
-                    "ServerSideEncryptionByDefault": {
-                        "SSEAlgorithm": "AES256"
-                    }
-                    }
-                ]
-                },
-                "Tags": [
+    "BucketName": {
+        "Type" : "String",
+            "Default" : "databricks-unity-catalog-root-storage-bucket",
+            "Description" : "Enter bucketname for your root bucket"
+        },
+    "DatabricksAccountID": {
+        "Type" : "String",
+            "Default" : "",
+            "Description" : "Enter your databricks Account ID"
+        }
+    },
+    "Resources": {
+        "RootBucket": {
+        "Type": "AWS::S3::Bucket",
+        "Properties": {
+            "BucketName":{ "Ref" : "BucketName" },
+            "BucketEncryption": {
+            "ServerSideEncryptionConfiguration": [
                 {
-                    "Key": "<Key1>",
-                    "Value": "<Value1>"
-                },
-                {
-                    "Key": "<Key2>",
-                    "Value": "<Value2>"
+                "ServerSideEncryptionByDefault": {
+                    "SSEAlgorithm": "AES256"
                 }
-                ]
+                }
+            ]
+            },
+            "Tags": [
+            {
+                "Key": "<Key1>",
+                "Value": "<Value1>"
+            },
+            {
+                "Key": "<Key2>",
+                "Value": "<Value2>"
             }
-        },
-        "SecurityCredentialRole": {
-            "Type": "AWS::IAM::Role",
-            "Properties": {
-                "RoleName": { "Ref" : "BucketName" },
-                "AssumeRolePolicyDocument": {
-                        "Version": "2012-10-17",
-                        "Statement": [
-                        {
-                            "Effect": "Allow",
-                            "Principal": {
-                            "AWS": [
-                                "arn:aws:iam::414351767826:role/unity-catalog-prod-UCMasterRole-14S5ZJVKOTYTL"
-                            ]
-                            },
-                            "Action": "sts:AssumeRole",
-                            "Condition": {
-                            "StringEquals": {
-                                "sts:ExternalId": { "Ref" : "DatabricksAccountID" }
-                            }
-                            }
-                        }
-                        ]
-                    },
-                "Policies": [
-                    {
-                    "PolicyName": {"Fn::Join": [ "",[ { "Ref" : "RoleName" },"-s3Access"] ] },
-                    "PolicyDocument": {
+            ]
+        }
+    },
+    "SecurityCredentialRole": {
+        "Type": "AWS::IAM::Role",
+        "Properties": {
+            "RoleName": { "Ref" : "BucketName" },
+            "AssumeRolePolicyDocument": {
                     "Version": "2012-10-17",
                     "Statement": [
-                        {
-                            "Action": [
-                                "s3:GetObject",
-                                "s3:PutObject",
-                                "s3:DeleteObject",
-                                "s3:ListBucket",
-                                "s3:GetBucketLocation",
-                                "s3:GetLifecycleConfiguration",
-                                "s3:PutLifecycleConfiguration"
-                            ],
-                            "Resource": [
-                                {"Fn::Join": [ "",["arn:aws:s3:::", { "Ref" : "BucketName" }]] },
-                                {"Fn::Join": [ "",["arn:aws:s3:::", { "Ref" : "BucketName" },"/*"]] },
-                                "arn:aws:s3:::<bucket1>/*",
-                                "arn:aws:s3:::<bucket1>",
-                                "arn:aws:s3:::<bucket2>/*",
-                                "arn:aws:s3:::<bucket2>",
-                                "arn:aws:s3:::<bucket3>/*",
-                                "arn:aws:s3:::<bucket3>"
-                                ],
-                            "Effect": "Allow"
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                        "AWS": [
+                            "arn:aws:iam::414351767826:role/unity-catalog-prod-UCMasterRole-14S5ZJVKOTYTL"
+                        ]
+                        },
+                        "Action": "sts:AssumeRole",
+                        "Condition": {
+                        "StringEquals": {
+                            "sts:ExternalId": { "Ref" : "DatabricksAccountID" }
                         }
-                    ]
+                        }
                     }
-                }
+                    ]
+                },
+            "Policies": [
+                {
+                "PolicyName": {"Fn::Join": [ "",[ { "Ref" : "RoleName" },"-s3Access"] ] },
+                "PolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Action": [
+                            "s3:GetObject",
+                            "s3:PutObject",
+                            "s3:DeleteObject",
+                            "s3:ListBucket",
+                            "s3:GetBucketLocation",
+                            "s3:GetLifecycleConfiguration",
+                            "s3:PutLifecycleConfiguration"
+                        ],
+                        "Resource": [
+                            {"Fn::Join": [ "",["arn:aws:s3:::", { "Ref" : "BucketName" }]] },
+                            {"Fn::Join": [ "",["arn:aws:s3:::", { "Ref" : "BucketName" },"/*"]] },
+                            "arn:aws:s3:::<bucket1>/*",
+                            "arn:aws:s3:::<bucket1>",
+                            "arn:aws:s3:::<bucket2>/*",
+                            "arn:aws:s3:::<bucket2>",
+                            "arn:aws:s3:::<bucket3>/*",
+                            "arn:aws:s3:::<bucket3>"
+                            ],
+                        "Effect": "Allow"
+                    }
                 ]
                 }
-            }   
-        }
+            }
+            ]
+            }
+        }   
     }
-    ```
+}
+```
 
 Once the stack is up, Update the same stack to include the Self-Assuming part of the IAM Role. Just copy the following. **_This small addition would cause your stack to fail if it existed in the first run._**
 
-    ```json
-    {
-        "AWSTemplateFormatVersion": "2010-09-09",
-        "Description": "Provision cloud resources resources to create databricks unity catalog metastore",
-        "Parameters" : {
-        "RoleName" : {
-                "Type" : "String",
-                "Default" : "databricks-unity-catalog-sc-role",
-                "Description" : "Enter rolename for your sc role"
-            },
-        "BucketName": {
+```json
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Provision cloud resources resources to create databricks unity catalog metastore",
+    "Parameters" : {
+    "RoleName" : {
             "Type" : "String",
-                "Default" : "databricks-unity-catalog-root-storage-bucket",
-                "Description" : "Enter bucketname for your root bucket"
-            },
-        "DatabricksAccountID": {
-            "Type" : "String",
-                "Default" : "",
-                "Description" : "Enter your databricks Account ID"
-            }
+            "Default" : "databricks-unity-catalog-sc-role",
+            "Description" : "Enter rolename for your sc role"
         },
-        "Resources": {
-            "RootBucket": {
-            "Type": "AWS::S3::Bucket",
-            "Properties": {
-                "BucketName":{ "Ref" : "BucketName" },
-                "BucketEncryption": {
-                "ServerSideEncryptionConfiguration": [
-                    {
-                    "ServerSideEncryptionByDefault": {
-                        "SSEAlgorithm": "AES256"
-                    }
-                    }
-                ]
-                },
-                "Tags": [
+    "BucketName": {
+        "Type" : "String",
+            "Default" : "databricks-unity-catalog-root-storage-bucket",
+            "Description" : "Enter bucketname for your root bucket"
+    },
+    "DatabricksAccountID": {
+        "Type" : "String",
+            "Default" : "",
+            "Description" : "Enter your databricks Account ID"
+        }
+    },
+    "Resources": {
+        "RootBucket": {
+        "Type": "AWS::S3::Bucket",
+        "Properties": {
+            "BucketName":{ "Ref" : "BucketName" },
+            "BucketEncryption": {
+            "ServerSideEncryptionConfiguration": [
                 {
-                    "Key": "<Key1>",
-                    "Value": "<Value1>"
-                },
-                {
-                    "Key": "<Key2>",
-                    "Value": "<Value2>"
+                "ServerSideEncryptionByDefault": {
+                    "SSEAlgorithm": "AES256"
                 }
-                ]
+                }
+            ]
+            },
+            "Tags": [
+            {
+                "Key": "<Key1>",
+                "Value": "<Value1>"
+            },
+            {
+                "Key": "<Key2>",
+                "Value": "<Value2>"
             }
-        },
-        "SecurityCredentialRole": {
-            "Type": "AWS::IAM::Role",
-            "Properties": {
-                "RoleName": { "Ref" : "BucketName" },
-                "AssumeRolePolicyDocument": {
-                        "Version": "2012-10-17",
-                        "Statement": [
-                        {
-                            "Effect": "Allow",
-                            "Principal": {
-                            "AWS": [
-                                "arn:aws:iam::414351767826:role/unity-catalog-prod-UCMasterRole-14S5ZJVKOTYTL",
-                                {"Fn::Join":[""["arn:aws:iam::",{"Ref": "AWS::AccountId"},":role/",{"Ref": "RoleName"}]]}
-                            ]
-                            },
-                            "Action": "sts:AssumeRole",
-                            "Condition": {
-                            "StringEquals": {
-                                "sts:ExternalId": { "Ref" : "DatabricksAccountID" }
-                            }
-                            }
-                        }
-                        ]
-                    },
-                "Policies": [
-                    {
-                    "PolicyName": {"Fn::Join": [ "",[ { "Ref" : "RoleName" },"-s3Access"] ] },
-                    "PolicyDocument": {
+            ]
+        }
+    },
+    "SecurityCredentialRole": {
+        "Type": "AWS::IAM::Role",
+        "Properties": {
+            "RoleName": { "Ref" : "BucketName" },
+            "AssumeRolePolicyDocument": {
                     "Version": "2012-10-17",
                     "Statement": [
-                        {
-                            "Action": [
-                                "s3:GetObject",
-                                "s3:PutObject",
-                                "s3:DeleteObject",
-                                "s3:ListBucket",
-                                "s3:GetBucketLocation",
-                                "s3:GetLifecycleConfiguration",
-                                "s3:PutLifecycleConfiguration"
-                            ],
-                            "Resource": [
-                                {"Fn::Join": [ "",["arn:aws:s3:::", { "Ref" : "BucketName" }]] },
-                                {"Fn::Join": [ "",["arn:aws:s3:::", { "Ref" : "BucketName" },"/*"]] },
-                                "arn:aws:s3:::<bucket1>/*",
-                                "arn:aws:s3:::<bucket1>",
-                                "arn:aws:s3:::<bucket2>/*",
-                                "arn:aws:s3:::<bucket2>",
-                                "arn:aws:s3:::<bucket3>/*",
-                                "arn:aws:s3:::<bucket3>"
-                                ],
-                            "Effect": "Allow"
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                        "AWS": [
+                            "arn:aws:iam::414351767826:role/unity-catalog-prod-UCMasterRole-14S5ZJVKOTYTL",
+                            {"Fn::Join":[""["arn:aws:iam::",{"Ref": "AWS::AccountId"},":role/",{"Ref": "RoleName"}]]}
+                        ]
+                        },
+                        "Action": "sts:AssumeRole",
+                        "Condition": {
+                        "StringEquals": {
+                            "sts:ExternalId": { "Ref" : "DatabricksAccountID" }
                         }
-                    ]
+                        }
                     }
-                }
+                    ]
+                },
+            "Policies": [
+                {
+                "PolicyName": {"Fn::Join": [ "",[ { "Ref" : "RoleName" },"-s3Access"] ] },
+                "PolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Action": [
+                            "s3:GetObject",
+                            "s3:PutObject",
+                            "s3:DeleteObject",
+                            "s3:ListBucket",
+                            "s3:GetBucketLocation",
+                            "s3:GetLifecycleConfiguration",
+                            "s3:PutLifecycleConfiguration"
+                        ],
+                        "Resource": [
+                            {"Fn::Join": [ "",["arn:aws:s3:::", { "Ref" : "BucketName" }]] },
+                            {"Fn::Join": [ "",["arn:aws:s3:::", { "Ref" : "BucketName" },"/*"]] },
+                            "arn:aws:s3:::<bucket1>/*",
+                            "arn:aws:s3:::<bucket1>",
+                            "arn:aws:s3:::<bucket2>/*",
+                            "arn:aws:s3:::<bucket2>",
+                            "arn:aws:s3:::<bucket3>/*",
+                            "arn:aws:s3:::<bucket3>"
+                            ],
+                        "Effect": "Allow"
+                    }
                 ]
                 }
-            }   
-        }
+            }
+            ]
+            }
+        }   
     }
-    ```
+}
+```
 
 This successful second run should create all the required cloud resources for metastore creation.
 
