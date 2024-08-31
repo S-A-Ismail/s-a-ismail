@@ -1,6 +1,6 @@
 ---
 title: A Guide to Metastore Options on Databricks on AWS
-date: 2024-08-26 14:24:14 + 0000
+date: 2023-06-06 14:24:14 + 0000
 categories: [Articles, Databricks]
 tags: [aws, databricks, metastores, catalogs, hive-metastore, glue, unity catalog]     # TAG names should always be lowercase
 author: ismail
@@ -11,10 +11,10 @@ Databricks is a cloud-based data platform combining Apache Spark’s power with 
 
 One of the biggest hurdles faced by data-driven enterprises is managing and organizing this abundance of data effectively. This is where a metastore comes into play — a crucial component that holds the key to unlocking the full potential of data.
 
-> This article was originally written by me back in early 2023, Although the options in this article still work, but Unity Catalog has evolved over time with featues like Lakehouse Federation, Connections and Volumes. Selection of your choice of Catalog should involve considering those as well. I will soon be writing on them.
+> This article was originally written by me back in early 2023, Although the options in this article still work, but Unity Catalog has evolved over time with features like Lakehouse Federation, Connections, and Volumes. Selection of your choice of Catalog should involve considering those as well. I will soon be writing about them.
 {: .prompt-info }
 
-> Unity Catalog OSS is also an added catalog type in this list again something on which I will soon write on.
+> Unity Catalog OSS is also an added catalog type in this list, again something which I will soon write about.
 {: .prompt-info }
 
 ## What is a Metastore? ##

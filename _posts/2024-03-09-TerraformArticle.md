@@ -1,6 +1,6 @@
 ---
 title: Creating resources in multiple AWS accounts using Terraform
-date: 2024-03-08 14:24:14 + 0000
+date: 2023-09-20 14:24:14 + 0000
 categories: [Articles, DevOps]
 tags: [aws, terraform, cloud, IAM, CloudFormation]     # TAG names should always be lowercase
 author: ismail
