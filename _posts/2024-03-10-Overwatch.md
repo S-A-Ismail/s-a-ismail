@@ -1,6 +1,6 @@
 ---
 title: Databricks Observability and Overwatch
-date: 2024-03-09 14:24:14 + 0000
+date: 2023-07-30 14:24:14 + 0000
 categories: [Articles, Databricks]
 tags: [aws, databricks, cloud, IAM, CloudFormation, observability, monitoring]     # TAG names should always be lowercase
 author: ismail
@@ -11,7 +11,7 @@ Hey there, Databricks enthusiasts! Welcome back to another exciting article, whe
 
 As we all know Databricks, our favorite Spark compute platform usually comes under a lot of compute workload which scales up and down and whatnot racking up huge bills. As cool as it is and with options to compartmentalize workloads over a few workspaces and into custom-tagged clusters, Databricks still lacks a somewhat central observability tool that can provide real-time analytics of usage. That being said, Databricks has detailed and definitive metrics monitoring capabilities that can provide observability stats.
 
-> Disclaimer: This article was written by me in early 2023. Overwatch from Databricks and its capabilites are moving towards deprecation as Databricks moves its monitoring funtionality over to System Tables in Unity Catalog. System Tables do not need to be managed like Overwatch hence don't require support help from Databricks as well. Although not as thorough right now. Overwatch may only benefit your organization if you do not plan to use Unity Catalog.
+> Disclaimer: This article was written by me in early 2023. Overwatch from Databricks and its capabilities are moving towards deprecation as Databricks moves its monitoring functionality over to System Tables in Unity Catalog. System Tables do not need to be managed like Overwatch hence don't require support help from Databricks as well. Although not as thorough right now. Overwatch may only benefit your organization if you do not plan to use Unity Catalog.
 {: .prompt-warning }
 
 **The following are some details that are monitored and logged by Databricks:**

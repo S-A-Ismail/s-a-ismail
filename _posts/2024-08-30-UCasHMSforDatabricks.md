@@ -1,6 +1,6 @@
 ---
 title: Unity Catalog as a Databricks Hive Metastore
-date: 2024-08-30 15:00:00 + 0000
+date: 2023-06-11 15:00:00 + 0000
 categories: [Articles, Databricks]
 tags: [aws, databricks, metastores, catalogs, hive-metastore, glue, unity catalog]     # TAG names should always be lowercase
 author: ismail

@@ -1,6 +1,6 @@
 ---
 title: External Hive Metastores on Databricks on AWS.
-date: 2024-08-30 15:00:00 + 0000
+date: 2023-06-07 15:00:00 + 0000
 categories: [Articles, Databricks]
 tags: [aws, databricks, metastores, catalogs, hive-metastore, glue, unity catalog]     # TAG names should always be lowercase
 author: ismail
@@ -11,7 +11,7 @@ Databricks has built-in support for the Hive Metastore (HMS), allowing for seaml
 
 Essentially all you have to do is add the right connection settings in a Clusters Spark Configurations.
 
-> This article was originally written by me back in early 2023, Databricks Unity Catalog has matured over time and unless DE teams are not using External HMS for migrating to Databricks, continuing to use External HMS would limit productivity while developing on Databricks as it might not support all the latest features that come with Unity Catalog.
+> This article was originally written by me back in early 2023, Databricks Unity Catalog has matured over time, and unless DE teams are not using External HMS for migrating to Databricks, continuing to use External HMS would limit productivity while developing on Databricks as it might not support all the latest features that come with Unity Catalog.
 {: .prompt-warning }
 
 ## Setting up External Hive Metastore on Databricks: ##

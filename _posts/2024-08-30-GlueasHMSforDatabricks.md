@@ -1,6 +1,6 @@
 ---
 title: Databricks with AWS Glue
-date: 2024-08-30 15:00:00 + 0000
+date: 2023-06-06 15:00:00 + 0000
 categories: [Articles, Databricks]
 tags: [aws, databricks, metastores, catalogs, hive-metastore, glue, unity catalog]     # TAG names should always be lowercase
 author: ismail
