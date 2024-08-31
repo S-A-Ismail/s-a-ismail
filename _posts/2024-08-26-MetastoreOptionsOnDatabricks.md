@@ -34,7 +34,7 @@ Databricks offers various metastore options to help you effectively manage metad
 
 ![img-description](CatalogOptions.PNG)
 
-### AWS Glue Data Catalog:###
+### AWS Glue Data Catalog: ###
 
 The AWS Glue Data Catalog seamlessly integrates with Databricks, providing a centralized and consistent view of your data.
 
@@ -43,7 +43,7 @@ _Pros and Cons of Using AWS Glue as a Metadata Catalog for Databricks_
 
 Documented limitations at [Limitations](https://docs.databricks.com/archive/external-metastores/aws-glue-metastore.html#limitations)
 
-### Hive Metastore Service:###
+### Hive Metastore Service: ###
 
 Another metastore option for Databricks on AWS is the Hive Metastore also called the HMS service. Hive is a data warehouse infrastructure built on top of Apache Hadoop, and its metastore component provides a relational database for storing metadata. HMS is used by default per workspace if no other metastore is configured.
 
@@ -52,14 +52,14 @@ Compatibility with HMS is native, no prior setup is needed. The simplicity of us
 ![img-description](HMSProsandCons.PNG)
 _Pros and Cons of Hive Metastore Service on Databricks_
 
-## External Hive Metastore Service:##
+## External Hive Metastore Service: ##
 
 Databricks on AWS also provides the flexibility to utilize an external Hive Metastore. This option allows you to leverage an existing Hive Metastore deployed on your own infrastructure or on AWS services like Amazon RDS or Amazon Aurora.
 
 ![img-description](EHMSProsandCons.PNG)
 _Pros and Cons of using an External Metastore on Databricks._
 
-## Unity Catalog:##
+## Unity Catalog: ##
 
 Databricks’s own latest solution to apparently all metastore problems. Specifically designed to enhance metadata management capabilities within the Databricks platform. It offers advanced features and benefits that streamline metadata organization, improve data discovery, and enable seamless collaboration among teams. With the Unity Catalog, Databricks users can efficiently manage and leverage metadata across their analytics workloads, accelerating data-driven insights and decision-making.
 
