@@ -40,22 +40,21 @@ Additionally, there are emerging projects like **Apache XTable**, which aim to r
 
 Now, moving on to a comparison between **Delta Lake** and **Iceberg**:
 
-![img-description](choosingAFormat.png.PNG)
+![img-description](choosingAFormat.png)
 
 The key differences between Delta Lake and Apache Iceberg lie in their design philosophy, performance optimizations, and feature sets. While both formats are designed to handle large-scale data workloads in data lakes, they excel in different areas depending on the use case.
 
-**| Feature                              | Delta Lake                                         | Apache Iceberg                                      |**
-**|--------------------------------------|----------------------------------------------------|-----------------------------------------------------|**
-  | **Versioning & Time Travel**         | Transaction log-based versioning and time travel   | Snapshot-based versioning and flexible time travel  |
-  | **Partitioning**                     | Hive-style partitions (rigid)                      | Dynamic partition transforms (e.g., day, hour)      |
-  | **Schema Evolution**                 | Basic (add/rename columns)                         | Advanced (add, drop, rename, reorder columns)       |
-  | **ACID Transactions**                | Optimistic Concurrency Control                     | Snapshot-based ACID, multi-writer support           |
-  | **Performance Optimizations**        | Z-ordering, data skipping (Databricks-specific)    | Partition pruning, predicate pushdown               |
-  | **Engine Support**                   | Primarily Spark, support for Presto and Flink      | Engine-agnostic: Spark, Flink, Hive, Trino, Presto  |
-  | **File Format**                      | Parquet                                            | Parquet, ORC, Avro                                  |
-  | **Compaction & Data Management**     | Auto-compaction, optimized writes                  | Automatic metadata management, efficient file layout|
-  | **Adoption & Ecosystem**             | Strong in Databricks ecosystem                     | Widely adopted for multi-engine architectures       |
-**|--------------------------------------|----------------------------------------------------|-----------------------------------------------------|**
+| **Feature**                          | **Delta Lake**                                     | **Apache Iceberg**                                  |
+| **Versioning & Time Travel**         | Transaction log-based versioning and time travel   | Snapshot-based versioning and flexible time travel  |
+| **Partitioning**                     | Hive-style partitions (rigid)                      | Dynamic partition transforms (e.g., day, hour)      |
+| **Schema Evolution**                 | Basic (add/rename columns)                         | Advanced (add, drop, rename, reorder columns)       |
+| **ACID Transactions**                | Optimistic Concurrency Control                     | Snapshot-based ACID, multi-writer support           |
+| **Performance Optimizations**        | Z-ordering, data skipping (Databricks-specific)    | Partition pruning, predicate pushdown               |
+| **Engine Support**                   | Primarily Spark, support for Presto and Flink      | Engine-agnostic: Spark, Flink, Hive, Trino, Presto  |
+| **File Format**                      | Parquet                                            | Parquet, ORC, Avro                                  |
+| **Compaction & Data Management**     | Auto-compaction, optimized writes                  | Automatic metadata management, efficient file layout|
+| **Adoption & Ecosystem**             | Strong in Databricks ecosystem                     | Widely adopted for multi-engine architectures       |
+
 
 ## Summary of Key Differences:
 
