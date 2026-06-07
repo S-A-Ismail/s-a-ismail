@@ -1,56 +1,109 @@
-# Chirpy Starter
+# Hi, I'm Ahmed Ismail 👋
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+## Data Engineer | Platform Engineer | Cloud Consultant
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+I design and build modern data platforms, data pipelines, and cloud infrastructure that help organizations turn raw data into reliable business insights.
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+Over the past 6+ years, I've worked across Data Engineering, Platform Engineering, and Cloud Operations, supporting enterprise-scale analytics environments and helping organizations modernize their data ecosystems.
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
+---
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
-```
+## 🚀 What I Work With
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+### Data Engineering
+- Apache Spark
+- Databricks
+- Apache Airflow
+- Snowflake
+- Amazon Redshift
+- Hive
+- dbt
+- SQL
+- Python
 
-## Prerequisites
+### Cloud & Infrastructure
+- AWS
+- Kubernetes (EKS)
+- Docker
+- Terraform
+- CloudFormation
+- CI/CD Pipelines
 
-Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of
-the basic environment. [Git](https://git-scm.com/) also needs to be installed.
+### Modern Data Lakehouse
+- Apache Iceberg
+- Delta Lake
+- Data Lakes on Amazon S3
+- Open Table Formats
+- Data Governance
+- Cost Optimization
 
-## Installation
+---
 
-Sign in to GitHub and [**use this template**][use-template] to generate a brand new repository and name it
-`USERNAME.github.io`, where `USERNAME` represents your GitHub username.
+## 💼 Areas of Experience
 
-Then clone it to your local machine and run:
+- Enterprise Data Platform Design
+- ETL / ELT Development
+- Data Lake Architecture
+- Cloud Migration Projects
+- Databricks Deployments
+- EMR on EC2 & EMR on EKS
+- Platform Operations & Reliability
+- Infrastructure as Code
+- Cost and Performance Optimization
+- Data Governance & Access Control
 
-```console
-$ bundle
-```
+---
 
-## Usage
+## 🔭 Current Interests
 
-Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
+- Open Table Formats (Iceberg, Delta)
+- Lakehouse Architectures
+- Spark on Kubernetes
+- Platform Engineering for Data Teams
+- Data Observability
+- Infrastructure Automation
+- AI-Augmented Data Engineering
 
-## License
+---
 
-This work is published under [MIT][mit] License.
+## 🛠 Featured Project
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[use-template]: https://github.com/cotes2020/chirpy-starter/generate
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+### Spark on Kubernetes Learning Platform
+
+A self-learning project focused on understanding how modern data platforms are assembled using open-source technologies.
+
+**Stack**
+- Docker
+- Kubernetes
+- Apache Spark
+- Apache Livy
+- Jupyter Notebooks
+- Apache Hive
+
+The goal is to gain hands-on experience building and operating Spark workloads on Kubernetes without relying on managed services.
+
+---
+
+## ✍️ Writing
+
+I occasionally write about:
+- Data Engineering
+- Open Table Formats
+- AWS
+- Databricks
+- Spark
+- Platform Engineering
+- Cost Optimization
+- Real-world lessons from enterprise data platforms
+
+---
+
+## 🤝 Let's Connect
+
+- LinkedIn: linkedin.com/in/syed-ahmed-ismail-799773134
+- Blogs: https://s-a-ismail.github.io/s-a-ismail/ or https://medium.com/@syedahmedismail98
+- GitHub: https://github.com/S-A-Ismail
+
+---
+
+> "Good data platforms aren't just built for scale. They're built so teams can move faster with confidence."
