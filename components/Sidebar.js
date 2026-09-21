@@ -23,6 +23,15 @@ const navLinks = [
     ),
   },
   {
+    href: '/projects',
+    label: 'Projects',
+    icon: (
+      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
+  },
+  {
     href: '/categories',
     label: 'Categories',
     icon: (
