@@ -23,3 +23,5 @@ out
 
 # Misc
 assets/js/dist
+.vercel
+.env*

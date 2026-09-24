@@ -1,11 +1,10 @@
 export const metadata = {
   title: 'Projects',
   description:
-    'Selected projects — MiniLake, an all-in-one data platform, and Code Graph, an MCP server that makes a codebase queryable as a graph.',
+    'Selected projects — MiniLake, an all-in-one data platform; Code Graph, an MCP server that makes a codebase queryable as a graph; and Urban Intelligence, an interactive map of Pakistan.',
 }
 
-// Set `live` once the Vercel deployment URL is known; a card with `live: null`
-// simply renders without a live-demo link.
+// A card with `live: null` or `repo: null` simply renders without that link.
 const projects = [
   {
     name: 'MiniLake',
@@ -20,7 +19,7 @@ const projects = [
         'variables, which means the site consumes it directly rather than compiling against it.',
     ],
     stack: ['Design system', 'Static site', 'CSS custom properties', 'React', 'Vercel'],
-    live: null,
+    live: 'https://minilake.vercel.app/',
     repo: 'https://github.com/The-Data-Platform-Project/minilake',
   },
   {
@@ -37,7 +36,23 @@ const projects = [
         'source.',
     ],
     stack: ['MCP', 'Static analysis', 'Graph database', 'Python'],
-    live: null,
+    live: 'https://code-graph-viz.vercel.app/',
+    repo: null,
+  },
+  {
+    name: 'Urban Intelligence',
+    tagline: 'An interactive population and geography map of Pakistan',
+    blurb: [
+      'An interactive D3 map of five cities — Karachi, Lahore, Islamabad, Peshawar and Multan — ' +
+        'drilling from the country down to neighbourhood level wherever open boundaries exist. ' +
+        'Nine census layers switch between the 2023 census and a 2026 projection, and the current ' +
+        'view exports to CSV exactly as it appears on screen.',
+      'On top of the census data sits a dealership clustering layer: each territory is shaded by ' +
+        'the regions it covers, with premium areas picked out inside it. Data limitations are ' +
+        'carried in the interface itself rather than buried in documentation.',
+    ],
+    stack: ['D3', 'GeoJSON', 'Python', 'Data visualisation', 'Vercel'],
+    live: 'https://urban-intelligence-snowy.vercel.app/',
     repo: null,
   },
 ]
